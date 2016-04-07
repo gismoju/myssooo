@@ -6,15 +6,29 @@
   "name": "Mysso",
   "description": "This extension will help you to control your digital life",
   "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "history",
+    "topSites"
+  ],
 
   "browser_action": {
    "default_icon": "icon.png",
    "default_popup": "popup.html"
   },
 
-  "content_scripts": [{
+  "content_scripts": [
+  {
   	"matches" : ["https://*.google.fr/*"],
   	"css" : ["basic.css"]
-  	}]
-
+  	},
+  {
+    "matches" : ["https://*.qwant.com/*"],
+    "css" : ["basic_qwant.css"]
+  },
+  {
+    "matches" : ["https://*.decathlon.fr/*","http://*.decathlon.fr/*" ],
+    "css" : ["basic_decathlon.css"]
+  }
+ ]
 }
